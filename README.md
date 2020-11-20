@@ -14,7 +14,7 @@ ToIP contributors should be able to:
 
 ### Styling
 1. Apply a Material style Theme that is ToIP specific 
-2. Leverage a Color pallet derives from the ToIP Logo.
+2. Leverage a Color pallet derives from the [ToIP Logo Assets](https://github.com/trustoverip/logo-assets).
 3. Provide configurable navigator with numeric outlines level 1-3: See examople Spec style: https://identity.foundation/sidetree/spec/
 4. Build upon the Material Theme (not insiders) with Search Suggest and/or Highlight - void of Insider Token trequirements. 
 5. One ToIP Theme with config option for header generated numbering (with or without).
