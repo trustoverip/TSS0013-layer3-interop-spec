@@ -15,7 +15,7 @@ ToIP contributors should be able to:
 ### Styling
 1. Apply a Material style Theme that is ToIP specific 
 2. Leverage a Color pallet derives from the [ToIP Logo Assets](https://github.com/trustoverip/logo-assets).
-3. Provide configurable navigator with numeric outlines level 1-3: See examople Spec style: https://identity.foundation/sidetree/spec/
+3. Provide configurable navigator with numeric outlines level 1-3: See [Spec-Up](https://identity.foundation/sidetree/spec/) as an example style for the development of specifications.
 4. Build upon the Material Theme (not insiders) with Search Suggest and/or Highlight - void of Insider Token trequirements. 
 5. One ToIP Theme with config option for header generated numbering (with or without).
 
@@ -24,8 +24,8 @@ ToIP members hsould be able to prime to repos using this repo as a GitHub Templa
 	
 ### Development and Processing
 1. Command line tools (make) for generating local test content. See example Repos:
-	* https://github.com/vinomaster/bbu-gf
-	* https://github.com/vinomaster/mkdocs-weasyprint-template
+	* [BBU Goverance Framework Docs](https://github.com/vinomaster/bbu-gf)
+	* [General MkDocs PDF Enabled Repo Template](https://github.com/vinomaster/mkdocs-weasyprint-template) for GitHub Pages
 2. Github workflow (actions) for producing GitHub-Pages
 3. Layout (outline / organize) multiple markdown files (i.e.: mkdocs.yml)
 
