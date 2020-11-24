@@ -33,16 +33,16 @@ dist/combined.md: dist mkdocs.yml docs/*.md
 # Rules
 # -----------------------------------------------------------------------------
 
-# Bootstrap the environment
+# Set up the development environment
 setup: venv
 	. ./venv/bin/activate
 	pip3 install -r requirements.txt
 
-# Combine all *.md files in the docs folder into a single file
+# Build distribution files
 build: dist/combined.md
 	mkdocs build
 
-# Clean build files
+# Clean distribution files
 clean:
 	rm -rf dist site
 
