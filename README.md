@@ -40,6 +40,8 @@ of [Material for MkDocs][2].
 
 ## Usage
 
+### Preview server
+
 Ensure that you're inside the virtual environment, i.e. repeat step 5 from the
 setup if you're unsure. Now, in order to preview your documentation project,
 enter:
@@ -53,6 +55,21 @@ After [making yourself familiar with MkDocs][8], create a Markdown file in the
 `docs` folder, and add it to the `nav` section in `mkdocs.yml`. The development
 server will reload every time you save your document, or make a change in
 `mkdocs.yml`.
+
+### Combined Markdown file
+
+If you want to create a combined Markdown file, this repository contains some
+scripts which will preprocess and concatenate all Markdown files in the order
+specified in `mkdocs.yml`. The scripts will ensure that internal links to
+pages and anchors are correct. The combined file can be created with:
+
+```
+make combine
+```
+
+The resulting Markdown file will be located at `dist/index.md`, alongside with
+the contents of the `assets` folder. The reason for that is that you probably
+want to include all assets (i.e. images) when distributing yout documentation.
 
 ## Deployment
 
