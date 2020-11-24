@@ -60,5 +60,5 @@ combine: dist/index.md dist/assets
 # -----------------------------------------------------------------------------
 
 # Special targets
-.PHONY: setup build serve
+.PHONY: setup clean build serve combine
 .FORCE:
