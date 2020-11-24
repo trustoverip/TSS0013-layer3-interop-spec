@@ -11,7 +11,7 @@
 # LIMITATIONS UNDER THE LICENSE.
 
 # Project information
-site_name: Trust over IP – General Template
+site_name: Trust over IP – Specification Template
 site_url: https://trustoverip.github.io/mkdocs-material/
 site_author: Jane Doe
 site_description: >-
@@ -50,6 +50,9 @@ theme:
 # Plugin configuration
 plugins:
   - search
+  - enumerate-headings:
+      strict: true
+      toc_depth: 3
 
 # Extensions configuration
 markdown_extensions:
@@ -60,7 +63,7 @@ markdown_extensions:
   - footnotes
   - meta
   - toc:
-      permalink: true
+      permalink: "§"
   - pymdownx.arithmatex:
       generic: true
   - pymdownx.betterem:
@@ -105,6 +108,7 @@ extra:
 # Additional stylesheets
 extra_css:
   - assets/stylesheets/main.css
+  - assets/stylesheets/spec.css
 
 # Additional JavaScript
 extra_javascript:

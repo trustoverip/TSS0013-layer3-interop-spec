@@ -39,33 +39,6 @@
   border-bottom: .05rem solid currentColor;
 }
 
-/* Move headerlink to the beginning if enumeration is enabled */
-.md-typeset .headerlink {
-  float: left;
-  width: 1.6rem;
-  margin-left: 0;
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(-0.1rem)
-}
-
-/* Ensure alignment when title has line break */
-.md-nav--primary .md-nav__link {
-  display: flex;
-}
-
-/* Define section counter */
-.md-nav--primary .md-nav__list {
-  counter-reset: section;
-}
-
-/* Increment counter for each section */
-.md-nav--primary .md-nav__link::before {
-  margin-right: .2rem;
-  counter-increment: section;
-  content: counter(section) ".";
-}
-
 /* Align Linux Foundation banner */
 .md-announce img {
   vertical-align: text-bottom;
