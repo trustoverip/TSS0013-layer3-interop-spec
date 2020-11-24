@@ -12,4 +12,5 @@
 
 mkdocs-enumerate-headings-plugin
 mkdocs-material
+mkdocs-pdf-export-plugin
 pandocfilters
