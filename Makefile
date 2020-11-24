@@ -42,17 +42,20 @@ setup: venv
 	. ./venv/bin/activate
 	pip3 install -r requirements.txt
 
-# Build distribution files
-build: dist/index.md dist/assets
-	mkdocs build
-
-# Clean distribution files
+# Clean all build files
 clean:
 	rm -rf dist site
+
+# Build documentation
+build:
+	mkdocs build
 
 # Serve documentation on localhost
 serve:
 	mkdocs serve
+
+# Create combined document
+combine: dist/index.md dist/assets
 
 # -----------------------------------------------------------------------------
 
