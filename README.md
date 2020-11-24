@@ -1,36 +1,76 @@
-# mkdocs-material
-Material for MkDocs is a ToIP Branded theme for [MkDocs](https://www.mkdocs.org/), a static site generator geared towards (technical) project documentation and specification development. This ToIP repo template for with ToIP Material Theme to be used as a GitHub Template Repository.
+#  Trust over IP - Documentation and Specification Template
 
-## Objective
-This repo is a [GitHub Repo Template](https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-template-repository) for creating GitHub repositories within the ToIP GitHub Organization. Newly generated repos will contain all the necessary code for using MkDocs for the development of [ToIP Deliverables](https://github.com/trustoverip/deliverables/blob/master/_process/work_products.md).
+This template repository provides a ready-to-use setup for a ToIP branded theme
+for [MkDocs][1], a static site generator geared towards (technical) project 
+documentation and specification development. The theme is a customized version
+of [Material for MkDocs][2].
 
-## Requirements
+  [1]: https://www.mkdocs.org/
+  [2]: https://squidfunk.github.io/mkdocs-material/
 
-### Workflow
-ToIP contributors should be able to:
-1. Gather: Define, Organize and Assign work towards the developement of a ToIP Deliverable based on project outline that aggregates a collection of discrete Markdown files. 
-2. Author: Use any Markdown editor they desire. 
-3. Produce: Configure the generation of one or two possible deliverables: General Document, Specification.
+## Setup
 
-### Styling
-1. Apply a Material style Theme that is ToIP specific 
-2. Leverage a Color pallet derives from the [ToIP Logo Assets](https://github.com/trustoverip/logo-assets).
-3. Provide configurable navigator with numeric outlines level 1-3: See [Spec-Up](https://identity.foundation/sidetree/spec/) as an example style for the development of specifications.
-4. Build upon the Material Theme (not insiders) with Search Suggest and/or Highlight - void of Insider Token trequirements. 
-5. One ToIP Theme with config option for header generated numbering (with or without).
+1. Generate a new repository from this template repository (see [GitHub docs][3])
+2. Clone the new repository (see [GitHub docs][4])
+3. Open the repository in an editor (i.e. [Visual Studio Code][5]):
 
-### Versioning
-ToIP members hsould be able to prime to repos using this repo as a GitHub Template Repository.
-	
-### Development and Processing
-1. Command line tools (make) for generating local test content. See example Repos:
-	* [BBU Goverance Framework Docs](https://github.com/vinomaster/bbu-gf)
-	* [General MkDocs PDF Enabled Repo Template](https://github.com/vinomaster/mkdocs-weasyprint-template) for GitHub Pages
-2. Github workflow (actions) for producing GitHub-Pages
-3. Layout (outline / organize) multiple markdown files (i.e.: mkdocs.yml)
+   1. If you want to create _general documentation_, you can just delete the
+      `mkdocs.spec.yml` file, which is located at the root of the project.
+   2. If you want to create a _specification_, delete the `mkdocs.yml` file,
+      and rename `mkdocs.spec.yml` to `mkdocs.yml`
 
-### Rendering Formats
-Minimally, this repo MUST allow for the configuration of generating these rendoring formats:
-1. Single Markdown file (via pandoc or other plugins)
-2. Single PDF (via pdf-export or other plugins)
-3. Website/GitHub-Pages
+4. Ensure that you have `python`, `make` and [`pandoc`][6] installed, the latter
+   of which is necessary to create a combined Markdown file. If you don't need
+   to do that, you don't need to install `pandoc`.
+
+5. Bootstrap the local environment, which will automatically install and setup
+   [`virtualenv`][7], a tool to create isolated Python environments:
+
+   ```
+   make setup
+   ```
+
+   After the command finished, your terminal should now show `(venv)` before the
+   prompt, to indicate you're inside a virtual environment. If you want to leave
+   the environment, just close the terminal, or enter:
+
+   ```
+   deactivate
+   ```
+
+## Usage
+
+Ensure that you're inside the virtual environment, i.e. repeat step 5 from the
+setup if you're unsure. Now, in order to preview your documentation project,
+enter:
+
+```
+make serve
+```
+
+This will start MkDocs and spin up a development server at http://localhost:8000.
+After [making yourself familiar with MkDocs][8], create a Markdown file in the
+`docs` folder, and add it to the `nav` section in `mkdocs.yml`. The development
+server will reload every time you save your document, or make a change in
+`mkdocs.yml`.
+
+## Deployment
+
+This repository contains a GitHub Action workflow that will automatically
+deploy your project documentation when you commit your changes to:
+
+```
+https://<username>.github.io/<repository>
+```
+
+When you're forking this repository, you may need to activate GitHub Actions
+for your fork, as GitHub disables them by default. This is as easy as clicking
+on __Actions__ in the top bar of your repository and clicking the button that
+is shown. If no button is shown, you're good to go.
+
+  [3]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
+  [4]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+  [5]: https://code.visualstudio.com/
+  [6]: https://pandoc.org/installing.html
+  [7]: https://virtualenv.pypa.io/en/latest/
+  [8]: https://www.mkdocs.org/#getting-started
