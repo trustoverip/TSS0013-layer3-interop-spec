@@ -25,8 +25,12 @@ venv:
 dist:
 	mkdir -p $@
 
+# Assets for combined document
+dist/assets: docs/assets $(shell find docs/assets)
+	cp -r $< $@
+
 # Combined document
-dist/combined.md: dist mkdocs.yml docs/*.md
+dist/index.md: dist mkdocs.yml $(shell find docs -name "*.md")
 	./scripts/combine.sh > $@
 
 # -----------------------------------------------------------------------------
@@ -39,7 +43,7 @@ setup: venv
 	pip3 install -r requirements.txt
 
 # Build distribution files
-build: dist/combined.md
+build: dist/index.md dist/assets
 	mkdocs build
 
 # Clean distribution files
