@@ -16,11 +16,47 @@
  * Overrides
  * ------------------------------------------------------------------------- */
 
+/* Induce a new stacking context, so we can use absolute positioning which
+   appears to be the only consistent way of moving the permalink to the
+   beginning of the headline without tampering with the HTML */
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6 {
+  position: relative;
+  padding-left: 1.6rem;
+}
 
-/* Move headerlink to the beginning if enumeration is enabled */
+/* Remove the anchor offset hack in favor of scroll margin */
+.md-typeset h1[id]::before,
+.md-typeset h2[id]::before,
+.md-typeset h3[id]::before,
+.md-typeset h4[id]::before,
+.md-typeset h5[id]::before,
+.md-typeset h6[id]::before {
+  display: none;
+}
+
+/* Add default scroll margins */
+.md-typeset [id]:target {
+  scroll-margin-top: 3.6rem;
+}
+
+/* Adjust scroll margins for some headlines */
+.md-typeset h1[id]:target,
+.md-typeset h2[id]:target,
+.md-typeset h3[id]:target,
+.md-typeset h4[id]:target {
+  scroll-margin-top: 3.4rem;
+}
+
+/* Move headerlink to the beginning */
 .md-typeset .headerlink {
-  float: left;
-  width: 1.6rem;
+  position: absolute;
+  left: 0;
+  top: 0;
   margin-left: 0;
   opacity: 1;
   visibility: visible;
