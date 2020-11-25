@@ -63,6 +63,12 @@
   transform: translateY(-0.1rem)
 }
 
+/* Fix layer position of buttons */
+.md-content__button {
+  position: relative;
+  z-index: 1;
+}
+
 /* Ensure alignment when title has line break */
 .md-nav--primary .md-nav__link {
   display: flex;
@@ -78,4 +84,19 @@
   margin-right: .2rem;
   counter-increment: section;
   content: counter(section) ".";
+}
+
+/* Adjust print styles */
+@media print {
+
+  /* Remove padding */
+  .md-typeset h1,
+  .md-typeset h2,
+  .md-typeset h3,
+  .md-typeset h4,
+  .md-typeset h5,
+  .md-typeset h6 {
+    position: initial;
+    padding-left: initial;
+  }
 }
