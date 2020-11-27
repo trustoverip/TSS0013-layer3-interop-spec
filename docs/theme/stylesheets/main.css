@@ -29,9 +29,27 @@
 
 /* Ensure that header shadow is always shown */
 .md-header {
+  height: auto;
   box-shadow:
     0 0 0.2rem rgba(0, 0, 0, .1),
     0 0.2rem 0.4rem rgba(0, 0, 0, .2);
+}
+
+/* Adjust for higher header */
+.md-header-nav {
+  align-items: center;
+}
+
+/* Adjust for higher header */
+.md-header-nav__title {
+  height: 2.4rem;
+}
+
+/* Make logo bigger */
+.md-header-nav__button.md-logo img,
+.md-header-nav__button.md-logo svg {
+  width: 4.8rem;
+  height: auto;
 }
 
 /* Underline text links */
