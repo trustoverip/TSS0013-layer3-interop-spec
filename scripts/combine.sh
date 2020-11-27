@@ -22,7 +22,9 @@
 # extract all filenames
 files=$( \
   grep -Ev "^ *#" mkdocs.yml | \
-  grep -oE "[^ ]+.md$" \
+  grep -oE "[^ ]+\.md" | \
+  tr -d '"' | \
+  tr -d "'" \
 )
 
 # Preprocess each file with Pandoc and output the result to standard out

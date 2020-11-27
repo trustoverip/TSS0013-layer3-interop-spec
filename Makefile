@@ -25,10 +25,6 @@ venv:
 dist:
 	mkdir -p $@
 
-# Assets for combined document
-dist/assets: docs/assets $(shell find docs/assets)
-	cp -r $< $@
-
 # Combined document
 dist/index.md: dist mkdocs.yml $(shell find docs -name "*.md")
 	./scripts/combine.sh > $@
@@ -55,7 +51,7 @@ serve:
 	mkdocs serve
 
 # Create combined document
-combine: dist/index.md dist/assets
+combine: dist/index.md
 
 # -----------------------------------------------------------------------------
 
