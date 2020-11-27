@@ -37,12 +37,12 @@ copyright: >-
 # Theme configuration
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/theme/overrides
   features:
     - navigation.instant
     # - navigation.tabs
-  favicon: assets/images/favicon.png
-  logo: assets/images/logo.svg
+  favicon: theme/images/favicon.png
+  logo: theme/images/logo.svg
   palette:
     primary: white
     accent: indigo
@@ -107,10 +107,10 @@ extra:
 
 # Additional stylesheets
 extra_css:
-  - assets/stylesheets/main.css
-  - assets/stylesheets/spec.css
+  - theme/stylesheets/main.css
+  - theme/stylesheets/spec.css
 
 # Additional JavaScript
 extra_javascript:
   - https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js
-  - assets/javascripts/main.js
+  - theme/javascripts/main.js

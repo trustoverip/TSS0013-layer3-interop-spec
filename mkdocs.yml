@@ -37,7 +37,7 @@ copyright: >-
 # Theme configuration
 theme:
   name: material
-  custom_dir: overrides
+  custom_dir: docs/theme/overrides
   features:
     - navigation.instant
     # - navigation.tabs
