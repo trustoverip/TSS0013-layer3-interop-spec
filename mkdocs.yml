@@ -41,8 +41,8 @@ theme:
   features:
     - navigation.instant
     # - navigation.tabs
-  favicon: assets/images/favicon.png
-  logo: assets/images/logo.svg
+  favicon: theme/images/favicon.png
+  logo: theme/images/logo.svg
   palette:
     primary: white
     accent: indigo
@@ -104,9 +104,9 @@ extra:
 
 # Additional stylesheets
 extra_css:
-  - assets/stylesheets/main.css
+  - theme/stylesheets/main.css
 
 # Additional JavaScript
 extra_javascript:
   - https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js
-  - assets/javascripts/main.js
+  - theme/javascripts/main.js

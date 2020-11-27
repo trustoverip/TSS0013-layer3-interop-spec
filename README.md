@@ -69,7 +69,7 @@ make combine
 
 The resulting Markdown file will be located at `dist/index.md`, alongside with
 the contents of the `assets` folder. The reason for that is that you probably
-want to include all assets (i.e. images) when distributing yout documentation.
+want to include all assets (i.e. images) when distributing your documentation.
 
 ## Deployment
 
