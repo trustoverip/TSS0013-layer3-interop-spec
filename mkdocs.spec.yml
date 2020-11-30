@@ -101,6 +101,8 @@ markdown_extensions:
 # Additional content
 extra:
   title: Trust over IP Foundation
+  lf_url: https://www.linuxfoundation.org/projects
+  toip_url: https://trustoverip.org/
   toc_title: Table of contents
   social:
     - icon: fontawesome/brands/github
