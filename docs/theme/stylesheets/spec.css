@@ -195,7 +195,7 @@
   }
 
   /* Navigation lists */
-  .md-nav--primary .md-nav__list {
+  .md-nav--primary > .md-nav__list {
     flex: 1;
     padding: 1rem 0;
     max-height: calc(100vh - 3.175rem);
@@ -212,6 +212,22 @@
     padding: 0 1rem;
     font-size: 0.8rem;
     line-height: 1.5;
+  }
+
+  /* Render table of contents as part of navigation */
+  .md-nav--primary .md-nav__link[for="__toc"] ~ .md-nav {
+    display: block;
+    margin-bottom: 1em;
+    border-left: px2rem(1px) solid var(--md-primary-fg-color);
+  }
+
+  /* Reset counter */
+  .md-nav--primary .md-nav__link[for="__toc"] ~ .md-nav .md-nav__link::before {
+    content: ""
+  }
+
+  .md-nav--primary .md-nav__link[for="__toc"] ~ .md-nav > .md-nav__title {
+    display: none;
   }
 }
 
