@@ -16,6 +16,17 @@
 # Build directories
 dist
 site
+html
 
 # Virtual environments
 venv
+
+# Miscellaneous
+.idea
+.vscode
+
+# Python directories
+__pycache__
+*.pyc
+*.tmp
+.pytest_cache

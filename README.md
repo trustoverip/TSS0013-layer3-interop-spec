@@ -1,93 +1,127 @@
 #  Trust over IP - Documentation and Specification Template
+This repo is a [GitHub Repo Template][1] for creating GitHub repositories within the ToIP GitHub Organization. Newly generated repos will contain all the necessary code for using MkDocs for the development of [ToIP Deliverables][2].
 
-This template repository provides a ready-to-use setup for a ToIP branded theme
-for [MkDocs][1], a static site generator geared towards (technical) project 
-documentation and specification development. The theme is a customized version
-of [Material for MkDocs][2].
+The **ToIP MkDocs Material Theme** a ready-to-use setup for a ToIP branded version of [MkDocs][3], a static site generator geared towards (technical) project documentation and specification development. The theme is a customized version of [Material for MkDocs][4].
 
-  [1]: https://www.mkdocs.org/
-  [2]: https://squidfunk.github.io/mkdocs-material/
+## Purpose
+This repo has been developed to address the [requirements](./REQUIREMENTS.md) of [ToIP Foundation][5] contributors with respect to the [authoring process][6] for [ToIP Deliverables][2].
 
-## Setup
-
-1. Generate a new repository from this template repository (see [GitHub docs][3])
-2. Clone the new repository (see [GitHub docs][4])
-3. Open the repository in an editor (i.e. [Visual Studio Code][5]):
-
-   1. If you want to create _general documentation_, you can just delete the
-      `mkdocs.spec.yml` file, which is located at the root of the project.
-   2. If you want to create a _specification_, delete the `mkdocs.yml` file,
-      and rename `mkdocs.spec.yml` to `mkdocs.yml`
-
-4. Ensure that you have `python`, `make` and [`pandoc`][6] installed, the latter
-   of which is necessary to create a combined Markdown file. If you don't need
-   to do that, you don't need to install `pandoc`.
-
-5. Bootstrap the local environment, which will automatically install and setup
-   [`virtualenv`][7], a tool to create isolated Python environments:
-
-   ```
-   make setup
-   ```
-
-   After the command finished, your terminal should now show `(venv)` before the
-   prompt, to indicate you're inside a virtual environment. If you want to leave
-   the environment, just close the terminal, or enter:
-
-   ```
-   deactivate
-   ```
+## Developer's Guide
+Once the new repo instance has been configured, Documentation and Specification contributors should familiarize themselves with the [Developer's Guide](./DEV_README.md).
 
 ## Usage
+The following instructions pertain to the initial configuration of a new repository instance that has been primed using [trustoverip/mkdocs-material GitHub Repo Template][12].
 
-### Preview server
+### Prime and clone a new repository
+1. Generate a new repository from this template repository (see [GitHub docs][7]).
+2. Clone the new repository (see [GitHub docs][8]).
 
-Ensure that you're inside the virtual environment, i.e. repeat step 5 from the
-setup if you're unsure. Now, in order to preview your documentation project,
-enter:
+### Pick a theme style
+This repo supports the use of a *Specification* styled theme when the [ToIP Deliverable Type Indicator][9] is `TSS`. In all other cases, a *General Documentation* styled theme is provided.
 
-```
-make serve
-```
+1. Open the repository using your favorite IDE (i.e. [Visual Studio Code][10], [Atom][11]).
+2. Apply your style selection
 
-This will start MkDocs and spin up a development server at http://localhost:8000.
-After [making yourself familiar with MkDocs][8], create a Markdown file in the
-`docs` folder, and add it to the `nav` section in `mkdocs.yml`. The development
-server will reload every time you save your document, or make a change in
-`mkdocs.yml`.
+| Style | Configuration Action |
+| --- | --- |
+| _General Documentation_ | Move the `mkdocs.spec.yml` file, which is located at the root of the repo, to the `archive` folder. |
+| _Specification_ | Move the `mkdocs.yml` file to the `archive` folder, and rename `mkdocs.spec.yml` to `mkdocs.yml`. |
 
-### Combined Markdown file
+### Configure MkDocs
 
-If you want to create a combined Markdown file, this repository contains some
-scripts which will preprocess and concatenate all Markdown files in the order
-specified in `mkdocs.yml`. The scripts will ensure that internal links to
-pages and anchors are correct. The combined file can be created with:
+[MkDocs][3] uses a [YAML file][13] to configure the operational properties for the document generator.
 
-```
-make combine
-```
+1. Open the repository using your favorite IDE (i.e. [Visual Studio Code][10], [Atom][11]).
+2. Edit the `mkdocs.yml` file and find the sections depicted below:
 
-The resulting Markdown file will be located at `dist/index.md`, alongside with
-the contents of the `assets` folder. The reason for that is that you probably
-want to include all assets (i.e. images) when distributing your documentation.
+    ```
+    # Project information
+    site_name: Trust over IP – General Template
+    site_url: https://trustoverip.github.io/mkdocs-material/
+    site_author: Jane Doe
+    site_description: >-
+      Trust over IP Foundation template for general documentation
+      and technical specification using Material for MkDocs
 
-## Deployment
+    # Repository information
+    repo_name: trustoverip/mkdocs-material
+    repo_url: https://github.com/trustoverip/mkdocs-material
 
-This repository contains a GitHub Action workflow that will automatically
-deploy your project documentation when you commit your changes to:
+    # Content Generator Settings
+    docs_dir: 'content'
+    site_dir: 'html'
+    ```
 
-```
-https://<username>.github.io/<repository>
-```
+3. Update the following settings:
 
-When you're forking this repository, you may need to activate GitHub Actions
-for your fork, as GitHub disables them by default. This is as easy as clicking
-on __Actions__ in the top bar of your repository and clicking the button that
-is shown. If no button is shown, you're good to go.
+    1. `site_name`: Set to ToIP Deliverables name using the naming convention `<TypeIndicator><4digitID>: <DeliverableName>`. For example,  _BP000: Utility Selection Criteria_.
 
-  [3]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
-  [4]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository
-  [5]: https://code.visualstudio.com/
-  [6]: https://pandoc.org/installing.html
-  [7]: https://virtualenv.pypa.io/en/latest/
-  [8]: https://www.mkdocs.org/#getting-started
+    2. `site_url`: Set to the GitHub Pages URL that will serve up this new repo site.
+
+    3. `site_author`: Set to the sponsoring ToIP WG. For example, _ToIP Governance Stack WG_.
+
+    4. `site_description`: Set to a short description of the ToIP Deliverable being documented by this repo.
+
+    5. `repo_name`: Set using name of the new GitHub repo.
+
+    6. `repo_url`: Set using the URL of the new GitHub repo.
+
+    7. `docs_dir`: Enter the preferred directory name for where the content for this document/spec will reside.
+
+    8. `site_dir`: Enter the preferred directory name for where the static HTML pages will be generated from Markdown files.
+
+    9. `extra.title`: Set to ToIP Deliverables name using the naming convention `<TypeIndicator><4digitID>: <DeliverableName>`. For example,  _BP000: Utility Selection Criteria_.
+
+### Configure Makefile
+
+1. Open the repository using your favorite IDE (i.e. [Visual Studio Code][10], [Atom][11]).
+2. Edit the `Makefile` file and find the variables depicted below:
+
+    ```
+    REPO_NAME ?= mkdocs-material
+    UPSTREAM_REPO ?= https://github.com/trustoverip/mkdocs-material.git
+    DEV_IMAGE ?= trustoverip/mkdocs-material-devenv
+    PANDOCS_IMAGE ?= trustoverip/pandocs-devenv
+    DEV_SITE_PORT ?= 7500
+    DEV_HOST_DIR ?= host_mkdocs
+    PUB_HOST_DIR ?= host_pandocs
+    PUBLISH_DIR ?= publish
+    ```
+
+3. Update the following settings:
+
+    1. `REPO_NAME`: Provide the GitHub repository name.
+    2. `UPSTREAM_REPO`: Set using the GitHub Repo Clone URL.
+    3. `DEV_SITE_PORT`: Pick a port that will be used for the local test server: _https://localhost:8080_
+
+### Update Readme
+1. Open the repository using your favorite IDE (i.e. [Visual Studio Code][10], [Atom][11]).
+2. Based on the type of deliverable that will be associated with this new repo, copy the appropriate `template` from the [templates folder within the trustoverip/deliverables repo][15] to `./archive/SUGGESTED_OUTLINE.md`.
+3. Move `README.md` to the `archive` folder. Rename it to `ORIGINAL_INSTRUCTIONS.md`.
+4. Rename `DOC_README.md` to `README.md`
+5. Update `README.md` accordingly.
+
+    1. At the top of your file modify the _title_ so it is in the form:
+
+        ```
+        <TypeIndicator><4digitID>: Friendly Version of Your Title.
+        ```
+
+    2. Refer to the _Contribution Options_ of the [ToIP Deliverables Portal][14].
+
+
+[1]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-template-repository
+[2]: https://github.com/trustoverip/deliverables/blob/master/_process/work_products.md
+[3]: https://www.mkdocs.org/
+[4]: https://squidfunk.github.io/mkdocs-material/
+[5]: https://trustoverip.org
+[6]: https://trustoverip.github.io/deliverables/process/process_concepts/
+[7]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template
+[8]: https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository
+[9]: https://trustoverip.github.io/deliverables/process/work_product_mgmt/#type-indicators
+[10]: https://code.visualstudio.com/
+[11]: https://atom.io
+[12]: https://github.com/trustoverip/mkdocs-material
+[13]: https://en.wikipedia.org/wiki/YAML#:~:text=yaml.org,is%20being%20stored%20or%20transmitted.
+[14]: https://trustoverip.github.io/deliverables/
+[15]: https://github.com/trustoverip/deliverables/tree/master/templates
