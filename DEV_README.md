@@ -40,21 +40,14 @@ If you are a _Content Author_ and **will not** work with `git` or do local testi
 
 ### Install Dependencies
 
-#### MacOS
+| Required Software | MacOS Installation Instructions | Windows Installation Instructions |
+| --- | --- | --- |
+| Docker | [Docker Desktop][1]| [Docker Desktop][1]|
+| `make` | [Command Line Tools for Xcode](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_12.2/Command_Line_Tools_for_Xcode_12.2.dmg)|[Install Chocolatey Package Installer](https://chocolatey.org/install), then install [make via choco](https://chocolatey.org/packages/make)|
+| `git` | [Git Installer][2] | [Git Installer][2]|
 
-| Required Software | Installation Instructions |
-| --- | --- |
-| Docker | [Docker Desktop](https://www.docker.com/products/docker-desktop)|
-| `make` | [Command Line Tools for Xcode](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_12.2/Command_Line_Tools_for_Xcode_12.2.dmg)|
-| `git` | [Git Installer](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)|
-
-#### Windows
-
-| Required Software | Installation Instructions |
-| --- | --- |
-| Docker | [Docker Desktop](https://www.docker.com/products/docker-desktop)|
-| `make` | [Install Chocolatey Package Installer](https://chocolatey.org/install), then install [make via choco](https://chocolatey.org/packages/make)|
-| `git` | [Git Installer](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git)|
+  [1]: https://www.docker.com/products/docker-desktop
+  [2]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
 
 ### Understanding Development Process
 This repo leverages standard *pull-request* code collaboration processing. Contributors to this repo should create a `fork` and then use that `fork` as the `origin `for their `local machine` based development environment.
@@ -151,7 +144,7 @@ $
 ```
 
 #### Generate HTML and PDF Docs
-This repo will combine all contributed content into a single Markdown file which is then used to produce standalone HTML and  PDF files. Internal scripts will preprocess and concatenate all Markdown files in the order specified in `mkdocs.yml`. The scripts will ensure that internal links to pages and anchors are correct. 
+This repo will combine all contributed content into a single Markdown file which is then used to produce standalone HTML and  PDF files. Internal scripts will preprocess and concatenate all Markdown files in the order specified in `mkdocs.yml`. The scripts will ensure that internal links to pages and anchors are correct.
 
 1. Launch the Publish Environment
 
