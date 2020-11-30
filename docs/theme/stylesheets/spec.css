@@ -86,6 +86,112 @@
   content: counter(section) ".";
 }
 
+/* Navigation title for drawer */
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  height: 3.175rem;
+  background: var(--md-accent-fg-color);
+  color: var(--md-accent-bg-color);
+  padding: 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 3.5;
+  box-shadow:
+    0 0 0.2rem rgba(0,0,0,.1),
+    0 0.2rem 0.4rem rgba(0,0,0,.2)
+}
+
+/* Hide logo */
+.md-nav--primary .md-nav__title[for="__drawer"] img {
+  display: none;
+}
+
+/* Remove table of contents */
+.md-sidebar--secondary {
+  display: none;
+}
+
+/* Adjust tablet styles */
+@media screen and (min-width: 60em) and (max-width: 76.1875em) {
+
+  /* Stretch content to whole width after removing table of contents */
+  .md-content {
+    max-width: 100%;
+  }
+}
+
+/* Adjust mobile/tablet styles */
+@media screen and (max-width: 76.1875em) {
+
+  /* Stretch content to whole width after removing table of contents */
+  .md-nav--primary .md-nav__title ~ .md-nav__list {
+    background: #EEE;
+  }
+}
+
+/* Adjust screen styles */
+@media screen and (min-width: 76.25em) {
+
+  /* Left-align grid */
+  .md-grid {
+    margin-left: 1rem;
+  }
+
+  /* Make space for sidebar */
+  .md-announce {
+    padding-left: 16.25rem;
+  }
+
+  /* Make space for sidebar */
+  .md-header,
+  .md-footer,
+  .md-content {
+    margin-left: 16.25rem;
+  }
+
+  /* Stretch content to whole width after removing table of contents */
+  .md-content {
+    max-width: calc(100% - 12.1rem);
+  }
+
+  /* Primary sidebar */
+  .md-sidebar--primary {
+    position: absolute;
+    top: 22px !important;
+    left: 0;
+    z-index: 1;
+    width: 16.25rem;
+    height: 100%;
+    padding-top: 0;
+    background: #EEE;
+    box-shadow:
+      inset 0 0 0.2rem rgba(0,0,0,.1),
+      inset 0 0.2rem 0.4rem rgba(0,0,0,.2)
+  }
+
+  /* Remove spacing on scrol wrapper */
+  .md-sidebar__scrollwrap {
+    margin: 0;
+  }
+
+  /* Snap primary sidebar to the left */
+  .md-header[data-md-state="shadow"] ~ .md-container .md-sidebar--primary {
+    position: fixed;
+    top: 0 !important;
+  }
+
+  /* Navigation lists */
+  .md-nav--primary .md-nav__list {
+    padding: 1rem 0;
+  }
+
+  /* Navigation items */
+  .md-nav--primary .md-nav__item {
+    padding: 0 1rem;
+    font-size: 0.8rem;
+    line-height: 1.5;
+  }
+}
+
 /* Adjust print styles */
 @media print {
 
