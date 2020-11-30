@@ -13,6 +13,17 @@
  */
 
 /* ----------------------------------------------------------------------------
+ * Keyframes
+ * ------------------------------------------------------------------------- */
+
+/* Activate scroll snapping with delay */
+@keyframes md-sidebar__scrollwrap--hack {
+  0%, 99%, 100% {
+    scroll-snap-type: none;
+  }
+}
+
+/* ----------------------------------------------------------------------------
  * Overrides
  * ------------------------------------------------------------------------- */
 
@@ -159,6 +170,8 @@
     top: 22px !important;
     left: 0;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
     width: 16.25rem;
     height: 100%;
     padding-top: 0;
@@ -171,6 +184,8 @@
   /* Remove spacing on scrol wrapper */
   .md-sidebar__scrollwrap {
     margin: 0;
+    height: auto !important;
+    overflow: hidden;
   }
 
   /* Snap primary sidebar to the left */
@@ -181,7 +196,13 @@
 
   /* Navigation lists */
   .md-nav--primary .md-nav__list {
+    flex: 1;
     padding: 1rem 0;
+  }
+
+  /* Navigation titles */
+  .md-nav--primary .md-nav__title {
+    flex-shrink: 0;
   }
 
   /* Navigation items */
