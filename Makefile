@@ -61,13 +61,13 @@ clean:
 
 # Prepare Git environment
 prepare_git:
-	git remote remove upstream; git remote add upstream $(UPSTREAM_REPO); git remote
+	git remote remove upstream; git remote add upstream $(UPSTREAM_REPO); git remote -v
 
 # Build all required Docker images
 build_images: ./docker/mkdocs/Dockerfile ./docker/pandocs/Dockerfile
 	docker build -t $(DEV_IMAGE) - < ./docker/mkdocs/Dockerfile
 	docker build -t $(PANDOCS_IMAGE) - < ./docker/pandocs/Dockerfile
-	docker images | head -3
+	docker images | grep -h "trustoverip"
 
 # Publication directory
 prepare_pandocs:

@@ -14,6 +14,8 @@
 
 # -----------------------------------------------------------------------------
 
+PWD=$(pwd)
+
 # Due to the possibility that !!python references are contained in mkdocs.yml,
 # and we'd have to properly load all necessary stuff, but we're only interested
 # in the order of entries in the nav section, we're just using grep to extract
@@ -30,7 +32,7 @@ files=$( \
 # Preprocess each file with Pandoc and output the result to standard out
 for f in $files; do
   pandoc \
-    --filter scripts/combine/preprocess.py \
+    --filter $PWD/scripts/combine/preprocess.py \
     --metadata file:$f \
     --to gfm \
     docs/$f

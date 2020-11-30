@@ -54,9 +54,6 @@ theme:
 # Plugin configuration
 plugins:
   - search
-  - pdf-export:
-      enabled_if_env: ENABLE_PDF_EXPORT
-      combined: true
 
 # Extensions configuration
 markdown_extensions:
@@ -101,7 +98,7 @@ markdown_extensions:
 
 # Additional content
 extra:
-  title: 'XX0000: Doc/Spec Name'
+  title: 'XX0000: Deliverable Name'
   lf_url: https://www.linuxfoundation.org/projects
   toip_url: https://trustoverip.org/
   social:

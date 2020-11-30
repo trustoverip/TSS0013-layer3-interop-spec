@@ -7,7 +7,7 @@ These instructions are pertinent to all ToIP contributors that seek to provide c
 | Role | Activities |
 | --- | --- |
 | Content Author | Use an editor of choice to write sections of the target deliverable using Markdown files as fragments of the ultimate deliverable document or specification. |
-| GitHub skilled developer | Github savvoy contributor that collects Markdown files from other contributors and manages commits and pull-requests as a representative of the team of  contributors/ |
+| GitHub skilled developer | Github savvy contributor that collects Markdown files from other contributors and manages commits and pull-requests as a representative of the team of  contributors/ |
 | Both | Provider of content and manager of Github interactions. |
 
 ## Preparation
