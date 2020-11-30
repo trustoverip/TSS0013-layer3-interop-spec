@@ -61,10 +61,10 @@ clean:
 
 # Prepare Git environment
 prepare_git:
-	git remote add upstream $(UPSTREAM_REPO); git remote
+	git remote remove upstream; git remote add upstream $(UPSTREAM_REPO); git remote
 
 # Build all required Docker images
-build_images: Dockerfile
+build_images: ./docker/mkdocs/Dockerfile ./docker/pandocs/Dockerfile
 	docker build -t $(DEV_IMAGE) - < ./docker/mkdocs/Dockerfile
 	docker build -t $(PANDOCS_IMAGE) - < ./docker/pandocs/Dockerfile
 	docker images | head -3
@@ -72,14 +72,14 @@ build_images: Dockerfile
 # Publication directory
 prepare_pandocs:
 	mkdir -p $(PUBLISH_DIR)
-	chmod +x ./scripts/combine.sh; ls -la ./scripts/
-	chmod +x ./scripts/combine/preprocess.py; ls -la scripts/combine/
 
 # -----------------------------------------------------------------------------
 # Local Environment (Docker Host) Commands
 # -----------------------------------------------------------------------------
 
 setup: prepare_git build_images ## Prepare Development and Publication environments
+	chmod +x ./scripts/combine.sh; ls -la ./scripts/
+	chmod +x ./scripts/combine/preprocess.py; ls -la scripts/combine/
 
 rebase: ## Rebase local machine environment with upstream repo
 	git fetch upstream
