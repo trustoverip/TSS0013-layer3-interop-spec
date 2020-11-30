@@ -57,9 +57,6 @@ plugins:
   - enumerate-headings:
       strict: true
       toc_depth: 3
-  - pdf-export:
-      enabled_if_env: ENABLE_PDF_EXPORT
-      combined: true
 
 # Extensions configuration
 markdown_extensions:
@@ -104,7 +101,7 @@ markdown_extensions:
 
 # Additional content
 extra:
-  title: Trust over IP Foundation
+  title: 'TSS0000: Spec Name'
   lf_url: https://www.linuxfoundation.org/projects
   toip_url: https://trustoverip.org/
   toc_title: Table of contents
