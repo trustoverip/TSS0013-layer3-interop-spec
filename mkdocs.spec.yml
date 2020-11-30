@@ -53,6 +53,9 @@ plugins:
   - enumerate-headings:
       strict: true
       toc_depth: 3
+  - pdf-export:
+      enabled_if_env: ENABLE_PDF_EXPORT
+      combined: true
 
 # Extensions configuration
 markdown_extensions:
