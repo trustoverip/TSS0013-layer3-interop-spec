@@ -148,8 +148,8 @@
   }
 
   /* Make space for sidebar */
-  .md-announce {
-    padding-left: 16.25rem;
+  .md-announce__inner {
+    padding-left: 0rem;
   }
 
   /* Make space for sidebar */
