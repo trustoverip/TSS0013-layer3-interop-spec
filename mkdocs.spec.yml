@@ -22,6 +22,10 @@ site_description: >-
 repo_name: trustoverip/mkdocs-material
 repo_url: https://github.com/trustoverip/mkdocs-material
 
+# Content Generator Settings
+docs_dir: 'docs'
+site_dir: 'html'
+
 # Copyright information
 copyright: >-
   Copyright &copy; 2020 Joint Development Foundation Projects, LLC, Trust over

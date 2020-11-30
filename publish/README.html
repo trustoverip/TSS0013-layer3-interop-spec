@@ -1,0 +1,30 @@
+<h1 id="trust-over-ip---documentation-and-specification-template">Trust over IP - Documentation and Specification Template</h1>
+<p>This template repository provides a ready-to-use setup for a ToIP branded theme for <a href="https://www.mkdocs.org/">MkDocs</a>, a static site generator geared towards (technical) project documentation and specification development. The theme is a customized version of <a href="https://squidfunk.github.io/mkdocs-material/">Material for MkDocs</a>.</p>
+<h2 id="setup">Setup</h2>
+<ol type="1">
+<li>Generate a new repository from this template repository (see <a href="https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template">GitHub docs</a>)</li>
+<li>Clone the new repository (see <a href="https://docs.github.com/en/free-pro-team@latest/github/creating-cloning-and-archiving-repositories/cloning-a-repository">GitHub docs</a>)</li>
+<li><p>Open the repository in an editor (i.e. <a href="https://code.visualstudio.com/">Visual Studio Code</a>):</p>
+<ol type="1">
+<li>If you want to create <em>general documentation</em>, you can just delete the <code>mkdocs.spec.yml</code> file, which is located at the root of the project.</li>
+<li>If you want to create a <em>specification</em>, delete the <code>mkdocs.yml</code> file, and rename <code>mkdocs.spec.yml</code> to <code>mkdocs.yml</code></li>
+</ol></li>
+<li><p>Ensure that you have <code>python</code>, <code>make</code> and <a href="https://pandoc.org/installing.html"><code>pandoc</code></a> installed, the latter of which is necessary to create a combined Markdown file. If you don’t need to do that, you don’t need to install <code>pandoc</code>.</p></li>
+<li><p>Bootstrap the local environment, which will automatically install and setup <a href="https://virtualenv.pypa.io/en/latest/"><code>virtualenv</code></a>, a tool to create isolated Python environments:</p>
+<pre><code>make setup</code></pre>
+<p>After the command finished, your terminal should now show <code>(venv)</code> before the prompt, to indicate you’re inside a virtual environment. If you want to leave the environment, just close the terminal, or enter:</p>
+<pre><code>deactivate</code></pre></li>
+</ol>
+<h2 id="usage">Usage</h2>
+<h3 id="preview-server">Preview server</h3>
+<p>Ensure that you’re inside the virtual environment, i.e. repeat step 5 from the setup if you’re unsure. Now, in order to preview your documentation project, enter:</p>
+<pre><code>make serve</code></pre>
+<p>This will start MkDocs and spin up a development server at http://localhost:8000. After <a href="https://www.mkdocs.org/#getting-started">making yourself familiar with MkDocs</a>, create a Markdown file in the <code>docs</code> folder, and add it to the <code>nav</code> section in <code>mkdocs.yml</code>. The development server will reload every time you save your document, or make a change in <code>mkdocs.yml</code>.</p>
+<h3 id="combined-markdown-file">Combined Markdown file</h3>
+<p>If you want to create a combined Markdown file, this repository contains some scripts which will preprocess and concatenate all Markdown files in the order specified in <code>mkdocs.yml</code>. The scripts will ensure that internal links to pages and anchors are correct. The combined file can be created with:</p>
+<pre><code>make combine</code></pre>
+<p>The resulting Markdown file will be located at <code>dist/index.md</code>, alongside with the contents of the <code>assets</code> folder. The reason for that is that you probably want to include all assets (i.e. images) when distributing your documentation.</p>
+<h2 id="deployment">Deployment</h2>
+<p>This repository contains a GitHub Action workflow that will automatically deploy your project documentation when you commit your changes to:</p>
+<pre><code>https://&lt;username&gt;.github.io/&lt;repository&gt;</code></pre>
+<p>When you’re forking this repository, you may need to activate GitHub Actions for your fork, as GitHub disables them by default. This is as easy as clicking on <strong>Actions</strong> in the top bar of your repository and clicking the button that is shown. If no button is shown, you’re good to go.</p>
