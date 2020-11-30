@@ -50,6 +50,9 @@ theme:
 # Plugin configuration
 plugins:
   - search
+  - pdf-export:
+      enabled_if_env: ENABLE_PDF_EXPORT
+      combined: true
 
 # Extensions configuration
 markdown_extensions:
