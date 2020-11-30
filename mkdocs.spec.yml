@@ -13,7 +13,7 @@
 # Project information
 site_name: Trust over IP – Specification Template
 site_url: https://trustoverip.github.io/mkdocs-material/
-site_author: Jane Doe
+site_author: Trust over IP Foundation
 site_description: >-
   Trust over IP Foundation template for general documentation
   and technical specification using Material for MkDocs
