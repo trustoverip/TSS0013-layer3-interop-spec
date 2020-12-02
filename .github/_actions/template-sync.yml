@@ -1,0 +1,20 @@
+name: template-sync-action
+
+on:
+  schedule:
+    - cron: '0 8 * * *'
+
+jobs:
+  sync:
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: narrowspark/template-sync-action@v1
+        with:
+          github_token: ${{ secrets.TEMPLATE_SYNC_SECRET }}
+          git_author_name: prisis
+          git_author_email: d.bannert@anolilab.de
+          template_repository: trustoverip/mkdocs-material
+          ref: refs/heads/main
