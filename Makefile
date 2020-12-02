@@ -34,11 +34,15 @@
 # Variables
 # -----------------------------------------------------------------------------
 
+# Repo Instance Specific
 REPO_NAME ?= mkdocs-material
 UPSTREAM_REPO ?= https://github.com/trustoverip/mkdocs-material.git
+DEV_SITE_PORT ?= 7500
+
+# Template Repo Defaults
+TEMPLATE_REPO ?= https://github.com/trustoverip/mkdocs-material.git
 DEV_IMAGE ?= trustoverip/mkdocs-material-devenv
 PANDOCS_IMAGE ?= trustoverip/pandocs-devenv
-DEV_SITE_PORT ?= 7500
 DEV_HOST_DIR ?= host_mkdocs
 PUB_HOST_DIR ?= host_pandocs
 PUBLISH_DIR ?= publish
@@ -62,6 +66,7 @@ clean:
 # Prepare Git environment
 prepare_git:
 	git remote remove upstream; git remote add upstream $(UPSTREAM_REPO); git remote -v
+	git remote remove template; git remote add template $(TEMPLATE_REPO); git remote -v
 
 # Build all required Docker images
 build_images: ./docker/mkdocs/Dockerfile ./docker/pandocs/Dockerfile
@@ -84,6 +89,8 @@ setup: prepare_git build_images ## Prepare Development and Publication environme
 rebase: ## Rebase local machine environment with upstream repo
 	git fetch upstream
 	git rebase upstream/master; git rebase upstream/main
+	git fetch template
+	git rebase template/main
 
 devenv: ## Prepare development environemnt
 	docker run -ti -v ${PWD}:/$(DEV_HOST_DIR) -p $(DEV_SITE_PORT):8000 --entrypoint=/bin/bash $(DEV_IMAGE)
