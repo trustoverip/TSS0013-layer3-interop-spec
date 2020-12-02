@@ -15,6 +15,7 @@
 #
 # setup: Prepare Development and Publication environments
 # rebase: Rebase local machine environment with upstream repo
+# merge: Rebase local machine environment with template repo
 # devenv: Prepare development environemnt
 # pubenv: Prepare publication environemnt
 # dev: Generates HTML content derived from markdown docs
@@ -53,7 +54,7 @@ PUBLISH_DIR ?= publish
 
 help:
 	@echo "\n"$(REPO_NAME)"\n"
-	@(grep -h "##" Makefile  | tail -8) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@(grep -h "##" Makefile  | tail -9) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 # -----------------------------------------------------------------------------
 # Targets
@@ -89,8 +90,10 @@ setup: prepare_git build_images ## Prepare Development and Publication environme
 rebase: ## Rebase local machine environment with upstream repo
 	git fetch upstream
 	git rebase upstream/master; git rebase upstream/main
+
+merge: ## Merge local machine environment with template repo
 	git fetch template
-	git rebase template/main
+	git merge template/main --allow-unrelated-histories
 
 devenv: ## Prepare development environemnt
 	docker run -ti -v ${PWD}:/$(DEV_HOST_DIR) -p $(DEV_SITE_PORT):8000 --entrypoint=/bin/bash $(DEV_IMAGE)
