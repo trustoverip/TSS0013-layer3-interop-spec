@@ -43,8 +43,8 @@ If you are a _Content Author_ and **will not** work with `git` or do local testi
 | Required Software | MacOS Installation Instructions | Windows Installation Instructions |
 | --- | --- | --- |
 | Docker | [Docker Desktop][1]| [Docker Desktop][1]|
-| `make` | [Command Line Tools for Xcode](https://download.developer.apple.com/Developer_Tools/Command_Line_Tools_for_Xcode_12.2/Command_Line_Tools_for_Xcode_12.2.dmg)|[Install Chocolatey Package Installer](https://chocolatey.org/install), then install [make via choco](https://chocolatey.org/packages/make)|
-| `git` | [Git Installer][2] | [Git Installer][2]|
+| `make` | Type `xcode-select --install` in a terminal window.|[Install Chocolatey Package Installer](https://chocolatey.org/install), then install [make via choco](https://chocolatey.org/packages/make)|
+| `git` | Type `xcode-select --install` in a terminal window OR [Git Installer][2] | [Git Installer][2]|
 
   [1]: https://www.docker.com/products/docker-desktop
   [2]: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
