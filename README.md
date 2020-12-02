@@ -6,8 +6,8 @@ The **ToIP MkDocs Material Theme** a ready-to-use setup for a ToIP branded versi
 ## Purpose
 This repo has been developed to address the [requirements](./REQUIREMENTS.md) of [ToIP Foundation][5] contributors with respect to the [authoring process][6] for [ToIP Deliverables][2].
 
-## Developer's Guide
-Once the new repo instance has been configured, Documentation and Specification contributors should familiarize themselves with the [Developer's Guide](./DEV_README.md).
+## Contributor's Guide
+Once the new repo instance has been configured, Documentation and Specification contributors should familiarize themselves with the [Contributor's Guide](https://github.com/trustoverip/mkdocs-material/blob/main/DEV_README.md).
 
 ## Usage
 The following instructions pertain to the initial configuration of a new repository instance that has been primed using [trustoverip/mkdocs-material GitHub Repo Template][12].
@@ -22,10 +22,10 @@ This repo supports the use of a *Specification* styled theme when the [ToIP Deli
 1. Open the repository using your favorite IDE (i.e. [Visual Studio Code][10], [Atom][11]).
 2. Apply your style selection
 
-| Style | Configuration Action |
-| --- | --- |
-| _General Documentation_ | Move the `mkdocs.spec.yml` file, which is located at the root of the repo, to the `archive` folder. |
-| _Specification_ | Move the `mkdocs.yml` file to the `archive` folder, and rename `mkdocs.spec.yml` to `mkdocs.yml`. |
+| Style | Configuration Action | View Demo |
+| --- | --- | --- |
+| _General Documentation_ | Move the `mkdocs.spec.yml` file, which is located at the root of the repo, to the `archive` folder. | [ToIP MkDocs Theme for Documentation](https://trustoverip.github.io/deliverables/)|
+| _Specification_ | Move the `mkdocs.yml` file to the `archive` folder, and rename `mkdocs.spec.yml` to `mkdocs.yml`. | [ToIP MkDocs Theme for Specs](https://squidfunk.github.io/toip-demo-spec/)|
 
 ### Configure MkDocs
 

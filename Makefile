@@ -15,6 +15,7 @@
 #
 # setup: Prepare Development and Publication environments
 # rebase: Rebase local machine environment with upstream repo
+# merge: Rebase local machine environment with template repo
 # devenv: Prepare development environemnt
 # pubenv: Prepare publication environemnt
 # dev: Generates HTML content derived from markdown docs
@@ -34,11 +35,15 @@
 # Variables
 # -----------------------------------------------------------------------------
 
+# Repo Instance Specific
 REPO_NAME ?= mkdocs-material
 UPSTREAM_REPO ?= https://github.com/trustoverip/mkdocs-material.git
+DEV_SITE_PORT ?= 7500
+
+# Template Repo Defaults
+TEMPLATE_REPO ?= https://github.com/trustoverip/mkdocs-material.git
 DEV_IMAGE ?= trustoverip/mkdocs-material-devenv
 PANDOCS_IMAGE ?= trustoverip/pandocs-devenv
-DEV_SITE_PORT ?= 7500
 DEV_HOST_DIR ?= host_mkdocs
 PUB_HOST_DIR ?= host_pandocs
 PUBLISH_DIR ?= publish
@@ -49,7 +54,7 @@ PUBLISH_DIR ?= publish
 
 help:
 	@echo "\n"$(REPO_NAME)"\n"
-	@(grep -h "##" Makefile  | tail -8) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@(grep -h "##" Makefile  | tail -9) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 # -----------------------------------------------------------------------------
 # Targets
@@ -62,6 +67,7 @@ clean:
 # Prepare Git environment
 prepare_git:
 	git remote remove upstream; git remote add upstream $(UPSTREAM_REPO); git remote -v
+	git remote remove template; git remote add template $(TEMPLATE_REPO); git remote -v
 
 # Build all required Docker images
 build_images: ./docker/mkdocs/Dockerfile ./docker/pandocs/Dockerfile
@@ -84,6 +90,10 @@ setup: prepare_git build_images ## Prepare Development and Publication environme
 rebase: ## Rebase local machine environment with upstream repo
 	git fetch upstream
 	git rebase upstream/master; git rebase upstream/main
+
+merge: ## Merge local machine environment with template repo
+	git fetch template
+	git merge template/main --allow-unrelated-histories
 
 devenv: ## Prepare development environemnt
 	docker run -ti -v ${PWD}:/$(DEV_HOST_DIR) -p $(DEV_SITE_PORT):8000 --entrypoint=/bin/bash $(DEV_IMAGE)

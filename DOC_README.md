@@ -29,7 +29,10 @@ This repo manages the development and maintenance of the subject ToIP deliverabl
     * [Standalone Markdown](./publish/<DOC_NAME>.md)
 
 ## Contributor's Guide
-Documentation and Specification contributors should familiarize themselves with the [Authoring Process](./DEV_README.md).
+Documentation and Specification contributors should familiarize themselves with the [Authoring Process](https://github.com/trustoverip/<REPO_NAME>/blob/main/DEV_README.md).
+```
+            Replace <REPO_NAME>
+```
 
 ## Related Resources
 
