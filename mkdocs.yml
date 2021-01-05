@@ -33,9 +33,9 @@ copyright: >-
   Projects, LLC is an affiliate of the Linux Foundation.
 
 # Navigation structure
-# nav:
-#  - Page 1: page-1.md
-#  - Page 2: page-2.md
+nav:
+  - overview: "index.md"
+
 
 # Theme configuration
 theme:
@@ -97,7 +97,7 @@ markdown_extensions:
 
 # Additional content
 extra:
-  title: 'TSS012: Layer 3 Interop Spec'
+  title: 'TSS013: Layer 3 Interop Spec'
   lf_url: https://www.linuxfoundation.org/projects
   toip_url: https://trustoverip.org/
   social:

@@ -4,13 +4,13 @@ Update title. For example, BP000: Utility Selection Criteria
 DELETE THIS COMMENT
 ```
 
-- Authors: [your name](you@github-email) -- email is optional
+- Authors: [Dave McKay](dave@northernblock.ca)
 - Status: [PROPOSED](https://trustoverip.github.io/deliverables/process/lifecycle_management/#proposed)
 - Since: YYYY-MM-DD (date you submit your PR)
 - Status Note: (explanation of current status)  
 - Supersedes: (link to anything this ToIP Deliverable  supersedes)
 - Start Date: YYYY-MM-DD (date you started working on this idea)
-- Tags: (see [Tag Options](https://trustoverip.github.io/deliverables/process/tags)
+- Tags: #tswg, #specification
 
 ## Summary
 
