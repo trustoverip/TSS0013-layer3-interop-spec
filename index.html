@@ -1,0 +1,1068 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Technology Stack Layer 3 Interoperability Specification">
+      
+      
+      
+        <meta name="author" content="Trust over IP Foundation">
+      
+      
+        <link rel="canonical" href="https://trustoverip.github.io/mkdocs-material/">
+      
+      <link rel="shortcut icon" href="theme/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.5">
+    
+    
+      
+        <title>TSWG Layer 3 Interop Spec</title>
+      
+    
+    
+      <link rel="stylesheet" href="assets/stylesheets/main.15aa0b43.min.css">
+      
+        
+        <link rel="stylesheet" href="assets/stylesheets/palette.75751829.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+      <link rel="stylesheet" href="theme/stylesheets/main.css">
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
+      
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#title-ex-0000-deliverable-name" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            
+  <a href="https://www.linuxfoundation.org/projects" target="_blank" rel="noopener noreferrer">
+    <img src="theme/images/banner.png" />
+  </a>
+
+          </div>
+        </aside>
+      
+    </div>
+    
+      
+
+
+
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href="https://trustoverip.org/" title="TSWG Layer 3 Interop Spec" class="md-header-nav__button md-logo" aria-label="TSWG Layer 3 Interop Spec">
+      
+  <img src="theme/images/logo.svg" alt="logo">
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            TSS013: Layer 3 Interop Spec
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Title (Ex. 0000: Deliverable Name)
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header-nav__source">
+        
+<a href="https://github.com/trustoverip/TSS0013-layer3-interop-spec/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    trustoverip/TSS0013-layer3-interop-spec
+  </div>
+</a>
+      </div>
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="https://trustoverip.github.io/mkdocs-material/" title="TSWG Layer 3 Interop Spec" class="md-nav__button md-logo" aria-label="TSWG Layer 3 Interop Spec">
+      
+  <img src="theme/images/logo.svg" alt="logo">
+
+    </a>
+    TSWG Layer 3 Interop Spec
+  </label>
+  
+    <div class="md-nav__source">
+      
+<a href="https://github.com/trustoverip/TSS0013-layer3-interop-spec/" title="Go to repository" class="md-source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M439.55 236.05L244 40.45a28.87 28.87 0 00-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 01-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 000 40.81l195.61 195.6a28.86 28.86 0 0040.8 0l194.69-194.69a28.86 28.86 0 000-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    trustoverip/TSS0013-layer3-interop-spec
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="foreword/" class="md-nav__link">
+        Foreword
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="scope/" class="md-nav__link">
+        Scope
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="references/" class="md-nav__link">
+        References
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="definitions/" class="md-nav__link">
+        Definitions
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="description/" class="md-nav__link">
+        Layer 3-4 description
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" >
+      
+      <label class="md-nav__link" for="nav-6">
+        Layer 3-4 specification
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Layer 3-4 specification" data-md-level="1">
+        <label class="md-nav__title" for="nav-6">
+          <span class="md-nav__icon md-icon"></span>
+          Layer 3-4 specification
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="specification/specification/" class="md-nav__link">
+        Specification
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" >
+      
+      <label class="md-nav__link" for="nav-7">
+        Annexes
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Annexes" data-md-level="1">
+        <label class="md-nav__title" for="nav-7">
+          <span class="md-nav__icon md-icon"></span>
+          Annexes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annex/annex_a/" class="md-nav__link">
+        Annex A Normative transactions
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annex/annex_b/" class="md-nav__link">
+        Annex B Implementation considerations
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annex/annex_c/" class="md-nav__link">
+        Annex C Specified protocols
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annex/annex_d/" class="md-nav__link">
+        Annex D Reference model
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="annex/annex_e/" class="md-nav__link">
+        Annex E Cryptogrpahy
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#motivation" class="md-nav__link">
+    Motivation
+  </a>
+  
+    <nav class="md-nav" aria-label="Motivation">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#normative-references" class="md-nav__link">
+    Normative References
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#informative-references" class="md-nav__link">
+    Informative References
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#terminology-and-conventions" class="md-nav__link">
+    Terminology and Conventions
+  </a>
+  
+    <nav class="md-nav" aria-label="Terminology and Conventions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#conventions" class="md-nav__link">
+    Conventions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#definitions" class="md-nav__link">
+    Definitions
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#abbreviations" class="md-nav__link">
+    Abbreviations
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#introduction" class="md-nav__link">
+    Introduction
+  </a>
+  
+    <nav class="md-nav" aria-label="Introduction">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-10" class="md-nav__link">
+    Version 1.0
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#version-xy" class="md-nav__link">
+    Version (x.y)
+  </a>
+  
+    <nav class="md-nav" aria-label="Version (x.y)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#version-xyz" class="md-nav__link">
+    Version (x.y.z)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sections-as-needed" class="md-nav__link">
+    Sections As Needed
+  </a>
+  
+    <nav class="md-nav" aria-label="Sections As Needed">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-level-2" class="md-nav__link">
+    Example Level 2
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Level 2">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-level-3" class="md-nav__link">
+    Example Level 3
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Level 3">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-level-4" class="md-nav__link">
+    Example Level 4
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-change-history-informative" class="md-nav__link">
+    Appendix Change History (Informative)
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix Change History (Informative)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#approved-version-xy-history" class="md-nav__link">
+    Approved Version x.y History
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#appendix-static-conformance-requirements-informative" class="md-nav__link">
+    Appendix Static Conformance Requirements (Informative)
+  </a>
+  
+    <nav class="md-nav" aria-label="Appendix Static Conformance Requirements (Informative)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#scr-for-xyz-client" class="md-nav__link">
+    SCR for XYZ Client
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#scr-for-xyz-server" class="md-nav__link">
+    SCR for XYZ Server
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/trustoverip/TSS0013-layer3-interop-spec/edit/master/docs/index.md" title="Edit this page" class="md-content__button md-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
+                  </a>
+                
+                
+                <h1 id="title-ex-0000-deliverable-name">Title (Ex. 0000: Deliverable Name)<a class="headerlink" href="#title-ex-0000-deliverable-name" title="Permanent link">&para;</a></h1>
+<ul>
+<li>Authors: <a href="you@github-email">your name</a> -- email is optional</li>
+<li>Deliverable Type: <em>Spec - Technical</em> </li>
+<li>Status: <a href="./process/lifecycle_management.md">PROPOSED</a></li>
+<li>Since: YYYY-MM-DD (date you submit your PR)</li>
+<li>Status Note: (explanation of current status)  </li>
+<li>Supersedes: (link to anything this ToIP Deliverable  supersedes)</li>
+<li>Start Date: YYYY-MM-DD (date you started working on this idea)</li>
+<li>Tags: (see ../../../tags.md)</li>
+</ul>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>One paragraph explanation of the objective of this document.
+DELETE THIS COMMENT
+</code></pre></div>
+<h2 id="motivation">Motivation<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>```Why are we doing this? What use cases does it support? What is the expected outcome?
+DELETE THIS COMMENT
+<div class="highlight"><pre><span></span><code>## Scope
+</code></pre></div>
+Briefly describe the scope of this document – how it presents the architecture of this particular enabler.  Include an explanation of how this architecture relates to Organization Name activity.  If it adds clarity, also describe what is not in the scope of this architecture.  DELETE THIS COMMENT
+<div class="highlight"><pre><span></span><code>## Reference
+
+```diff
+- Gating Criteria requirement
+- URL to be added
+</code></pre></div></p>
+<h3 id="normative-references">Normative References<a class="headerlink" href="#normative-references" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>The policy for reference lists is:
+1.  &#39;ORG_NAME&#39; documents listed should have at least one approved version – draft-only docs should not be referenced.  
+Exception exists for documents that will be approved with or after the referenced doc is approved (may be
+part of same enabler package).  In short – approved docs should not reference unapproved docs.
+2.  When a reference is made to an &#39;ORG_NAME&#39; specification, then Organization Name with the TM symbol (™) should
+be used in the description.
+3.  The name + version (no date) for &#39;ORG_NAME&#39; specifications are generally sufficient – dates should be used only
+if there is a specific reason to limit the usage.
+4.  For references to WAP Forum docs, dates should not be included as DID&#39;s for the old WAP Forum specifications
+are enough and the reference description should refer to WAP Forum™.
+5.  References to other affiliate docs should similarly provide sufficient information to uniquely determine the
+needed document and should provide the appropriate source information.
+6.  The URL for &#39;ORG_NAME&#39; material (new &#39;ORG_NAME&#39; and affiliate) should always be http://www.org_name.org (an exception is Registry that is reached through http://www.org_name.org/tech/)
+
+Models to use
+    [REFLABEL]  &lt;General Model&gt; &quot;Ref Title&quot;, Ref information (source, date, id), URL:http//&lt;ref-source&gt;/
+    [&#39;ORG_NAME&#39;DOC] &lt;&#39;ORG_NAME&#39; Model&gt; &quot;&#39;ORG_NAME&#39; Document Title&quot;,{ Version x.y,} Organization Name™, &#39;ORG_NAME&#39; &lt;docname&gt;{ &lt;version&gt;},
+                URL:http//www.org_name.org/
+
+If there are no entries in the table – enter ‘none’ to be clear.
+
+DELETE THIS COMMENT
+</code></pre></div>
+<table>
+  <caption>Normative References </caption>
+  <tbody>
+    <tr>
+      <td><strong>[RFC2119]</strong></td>
+      <td>"Key words for use in RFCs to Indicate Requirement Levels", S. Bradner, March 1997, URL:http://www.ietf.org/rfc/rfc2119.txt</td>
+    </tr>
+    <tr>
+      <td><strong>[RFC4234]</strong></td>
+      <td>"Augmented BNF for Syntax Specifications: ABNF", D. Crocker, Ed., P. Overell, October 2005, URL:http://www.ietf.org/rfc/rfc4234.txt</td>
+    </tr>
+    <tr>
+      <td><strong>[SCRRULES]</strong></td>
+      <td>"SCR Rules and Procedures", Organization Name™, 'ORG_NAME'-ORG-SCR_Rules_and_Procedures, URL:http://www.org_name.org/</td>
+   </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><span></span><code>Add/Remove reference rows as needed - DELETE This Row
+</code></pre></div>
+<h3 id="informative-references">Informative References<a class="headerlink" href="#informative-references" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Check the version of the Dictionary you are using and update the reference below.  Delete the [&#39;ORG_NAME&#39;DICT] entry if
+the dictionary is not used.  In general, use the latest available version unless seeking alignment with an
+existing set of specifications.
+
+DELETE THIS COMMENT
+</code></pre></div>
+<table>
+  <caption>Informative References </caption>
+  <tbody>
+    <tr>
+      <td><strong>['ORG_NAME'DICT]</strong></td>
+      <td>"Dictionary for 'ORG_NAME' Specifications", Version x.y, Organization Name™, 'ORG_NAME'-ORG-Dictionary-Vx_y, URL:http://www.org_name.org/</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><span></span><code>Add/Remove references as needed - DELETE This Row
+</code></pre></div>
+<h2 id="terminology-and-conventions">Terminology and Conventions<a class="headerlink" href="#terminology-and-conventions" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code><span class="gd">- Gating Criteria requirement</span>
+<span class="gd">- URL to be added</span>
+</code></pre></div>
+<h3 id="conventions">Conventions<a class="headerlink" href="#conventions" title="Permanent link">&para;</a></h3>
+<p>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD", "SHOULD NOT", "RECOMMENDED", "MAY", and "OPTIONAL" in this document are to be interpreted as described in [RFC2119].</p>
+<p>All sections and appendixes, except "Scope" and "Introduction", are normative, unless they are explicitly indicated to be informative.</p>
+<div class="highlight"><pre><span></span><code>If needed, describe or declare using appropriate normative references the additional conventions that are used.  DELETE THIS COMMENT
+</code></pre></div>
+<h3 id="definitions">Definitions<a class="headerlink" href="#definitions" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Add definitions in new rows of the following table as needed.  The following examples show how dictionary references should be made
+as well as locally defined terms.  This table should be maintained in sorted alphabetic order based on the labels of the terms.
+
+Examples:
+    Entity              Use definition #1 from [&#39;ORG_NAME&#39;DICT]
+    Interactive Service Use definition from [&#39;ORG_NAME&#39;DICT]
+    Local Term          The definition description would be presented directly
+
+DELETE THIS COMMENT
+</code></pre></div>
+<table>
+  <caption>Definitions</caption>
+  <tbody>
+    <tr>
+    <td><strong>LWM2M Bootstrap Server Account</strong></td>
+    <td>LWM2M Security Object Instance with Bootstrap Server Resource true</td>
+    </tr>
+    <tr>
+    <td><strong>LWM2M Server Account</strong></td>
+    <td>LWM2M Security Object Instance with Bootstrap Server Resource false and associated LWM2M Server Object Instance</td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><span></span><code>Add/Remove definition rows as needed - DELETE This Row
+</code></pre></div>
+<p>Kindly consult ['ORG_NAME'DICT] for more definitions used in this document.</p>
+<h3 id="abbreviations">Abbreviations<a class="headerlink" href="#abbreviations" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>Add abbreviations as needed.  No special notation should be made regarding terms copied from the Dictionary.  
+The list should be maintained in alphabetic order. DELETE This Row
+</code></pre></div>
+<table>
+<caption>Definitions</caption>
+<tbody>
+  <tr>
+    <td>'ORG_NAME'</td>
+    <td>Organization Name</td>
+  </tr>
+</tbody>
+</table>
+
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>From a market perspective...  
+* What can you do with this specification?
+* What problem does this solve?
+* How can this specification be applied?
+* Consider the target audience and provide deployment examples as possible.
+DELETE THIS COMMENT
+</code></pre></div>
+<h3 id="version-10">Version 1.0<a class="headerlink" href="#version-10" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>This section provides a high level, concise and informative description of the main functionality supported in the initial version of the specification.  The description should be brief, target length should be a few paragraphs.
+When the enabler or reference release is finished, this description should be aligned with the final functionality.
+
+DELETE THIS COMMENT
+</code></pre></div>
+<h3 id="version-xy">Version (x.y)<a class="headerlink" href="#version-xy" title="Permanent link">&para;</a></h3>
+<div class="highlight"><pre><span></span><code>This section should be included for each new major or minor version of the specification.
+
+It should provide a high level, concise and informative description of the new or modified functionality introduced in this version of the specification, compared to the previous version.  The description should be brief, target length should be a few paragraphs.  When the enabler or reference release is finished, this description should be aligned with the final functionality differences.
+
+DELETE THIS COMMENT
+</code></pre></div>
+<h4 id="version-xyz">Version (x.y.z)<a class="headerlink" href="#version-xyz" title="Permanent link">&para;</a></h4>
+<div class="highlight"><pre><span></span><code>This section should be included for each new service release of the specification.   It should describe at a high level the main changes made to the specification compared to the previous version.  The description should be brief, target length should be one paragraph.
+
+DELETE THIS COMMENT
+</code></pre></div>
+<h2 id="sections-as-needed">Sections As Needed<a class="headerlink" href="#sections-as-needed" title="Permanent link">&para;</a></h2>
+<div class="highlight"><pre><span></span><code>Sections for the normative specification text.  Fill in as needed.  The following validates the styles used for the headers.  DELETE THIS COMMENT
+</code></pre></div>
+<h3 id="example-level-2">Example Level 2<a class="headerlink" href="#example-level-2" title="Permanent link">&para;</a></h3>
+<p>(Add text here.)</p>
+<h4 id="example-level-3">Example Level 3<a class="headerlink" href="#example-level-3" title="Permanent link">&para;</a></h4>
+<p>(Add text here.)</p>
+<h5 id="example-level-4">Example Level 4<a class="headerlink" href="#example-level-4" title="Permanent link">&para;</a></h5>
+<p>(Add text here.)</p>
+<div class="highlight"><pre><span></span><code><span class="gd">- Gating Criteria requirement</span>
+<span class="gd">- URL to be defined.</span>
+</code></pre></div>
+<figure>
+    <img src="images/fig1_example.svg" alt="Example Figure">
+    <figcaption>Example Figure</figcaption>
+</figure>
+
+<table>
+  <caption>Example Table</caption>
+  <thead>
+      <tr>
+      <th>Item</th>
+      <th>Function</th>
+      <th>Reference</th>
+      </tr>       
+  </thead>      
+  <tbody>
+    <tr>
+    <td>Row 1</td>
+    <td>Grid 1,1 data</td>
+    <td>Grid 1,2 data</td>      
+    </tr>
+    <tr>
+    <td>Row 2</td>
+    <td>Grid 2,1 data</td>
+    <td>Grid 2,2 data</td>      
+    </tr>
+  </tbody>
+</table>
+
+<div class="highlight"><pre><span></span><code><span class="gd">- Gating Criteria</span>
+<span class="gd">- URL to be defined</span>
+</code></pre></div>
+<h2 id="appendix-change-history-informative">Appendix Change History (Informative)<a class="headerlink" href="#appendix-change-history-informative" title="Permanent link">&para;</a></h2>
+<h3 id="approved-version-xy-history">Approved Version x.y History<a class="headerlink" href="#approved-version-xy-history" title="Permanent link">&para;</a></h3>
+<table>
+    <caption>Approved Version x.y History</caption>
+    <thead>
+        <tr>
+            <th>Reference</th>
+            <th>Date</th>
+            <th>Description</th>
+        </tr>
+    </thead>
+    <tbody>    
+        <tr>
+            <td>n/a</td>
+            <td>n/a</td>
+            <td>No prior version</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2 id="appendix-static-conformance-requirements-informative">Appendix Static Conformance Requirements (Informative)<a class="headerlink" href="#appendix-static-conformance-requirements-informative" title="Permanent link">&para;</a></h2>
+<p>The notation used in this appendix is specified in [SCRRULES].<code>Add link</code></p>
+<div class="highlight"><pre><span></span><code>The following is an optional model of a set of SCR tables.  DELETE THIS COMMENT
+</code></pre></div>
+<h3 id="scr-for-xyz-client">SCR for XYZ Client<a class="headerlink" href="#scr-for-xyz-client" title="Permanent link">&para;</a></h3>
+<table>
+    <caption>Bootstrap Interface</caption>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Function</th>
+            <th>Reference</th>
+            <th>Requirement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>XYZ-C-001-M</td>
+            <td>Something mandatory</td>
+            <td>Section x.y</td>
+            <td>(XYZ-C-004-O OR XYZ-C-003-M) AND XYZ-C-002-O</td>
+        </tr>
+        <tr>
+            <td>XYZ-C-002-O</td>
+            <td>Something optional</td>
+            <td>Section x.y</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>XYZ-C-003-M</td>
+            <td>Dependencies on ZYX</td>
+            <td>Section x.y</td>
+            <td>ZYX:MCF</td>
+        </tr>
+        <tr>
+            <td>XYZ-C-004-O</td>
+            <td>Dependencies on ZYX</td>
+            <td>Section x.y</td>
+            <td>ZYX:OCF</td>
+        </tr>
+    </tbody>
+</table>
+
+<h3 id="scr-for-xyz-server">SCR for XYZ Server<a class="headerlink" href="#scr-for-xyz-server" title="Permanent link">&para;</a></h3>
+<table>
+    <caption>Bootstrap Interface</caption>
+    <thead>
+        <tr>
+            <th>Item</th>
+            <th>Function</th>
+            <th>Reference</th>
+            <th>Requirement</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>XYZ-S-001-M</td>
+            <td>Something mandatory</td>
+            <td>Section x.y</td>
+            <td>XYZ-S-004-O OR XYZ-S-002-O OR XYZ-S-003-M</td>
+        </tr>
+        <tr>
+            <td>XYZ-S-002-O</td>
+            <td>Something optional</td>
+            <td>Section x.y</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>XYZ-S-003-M</td>
+            <td>Dependencies on ZYX</td>
+            <td>Section x.y</td>
+            <td>ZYX:MCF</td>
+        </tr>
+        <tr>
+            <td>XYZ-S-004-O</td>
+            <td>Dependencies on ZYX</td>
+            <td>Section x.y</td>
+            <td>ZYX:OCF</td>
+        </tr>
+    </tbody>
+</table>
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2020 Joint Development Foundation Projects, LLC, Trust over IP Foundation Series <a href="https://jdfprojects.org/toip/">Terms of Use, Privacy Policy and Cookie Policy</a>. The Joint Development Foundation Projects, LLC is an affiliate of the Linux Foundation.
+          </div>
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+  <div class="md-footer-social">
+    
+      
+      
+        
+        
+      
+      <a href="https://github.com/trustoverip" target="_blank" rel="noopener" title="github.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://twitter.com/trustoverip" target="_blank" rel="noopener" title="twitter.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+      </a>
+    
+      
+      
+        
+        
+      
+      <a href="https://www.linkedin.com/company/trust-over-ip-foundation" target="_blank" rel="noopener" title="www.linkedin.com" class="md-footer-social__link">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+      </a>
+    
+  </div>
+
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
+      
+      <script>
+        app = initialize({
+          base: ".",
+          features: ['navigation.instant'],
+          search: Object.assign({
+            worker: "assets/javascripts/worker/search.8c7e0a7e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+        <script src="https://unpkg.com/mermaid@8.6.4/dist/mermaid.min.js"></script>
+      
+        <script src="theme/javascripts/main.js"></script>
+      
+    
+  </body>
+</html>
